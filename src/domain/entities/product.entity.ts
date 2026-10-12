@@ -7,7 +7,13 @@ export class ProductEntity extends AuditEntity {
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id!: string;
 
-  @Column({ name: 'name', type: 'varchar', length: 400, nullable: false })
+  @Column({
+    name: 'name',
+    type: 'varchar',
+    length: 400,
+    nullable: false,
+    unique: true,
+  })
   name!: string;
 
   @Column({
